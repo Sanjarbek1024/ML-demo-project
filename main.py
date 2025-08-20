@@ -1,12 +1,28 @@
+from dotenv import load_dotenv
+import os
 
-with open(".env") as f:
-    for line in f:
-        if line.startswith("GOOGLE_API_KEY="):
-            google_api_key = line.strip().split("=")[1]
-            break
+load_dotenv('.env')
 
-print(google_api_key)
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
+from fastapi import FastAPI
 
+app = FastAPI()
 
+{
+    "petal length": 4.5,
+    "petal width": 0.0,
+    "sepal length": 0.0,
+    "sepal width": 0.0
+}
 
+@app.get("/iris")
+async def iris_predict():
+    return {
+        "message": "Iris prediction endpoint success"
+    }
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run('main:app', reload=True)
