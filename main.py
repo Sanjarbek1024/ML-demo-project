@@ -1,39 +1,44 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, Form
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import joblib
 from sklearn.datasets import fetch_20newsgroups
 
-# Load the saved model
+# Load model
 model = joblib.load("models/news_classifier_pipeline.pkl")
-
-# Load category names (20 newsgroups target names)
 categories = fetch_20newsgroups(subset="train").target_names
 
-# Define request body
-class NewsInput(BaseModel):
-    text: str
-
-# Create FastAPI app
+# FastAPI app
 app = FastAPI(
     title="20 Newsgroups Classifier API",
-    description="A simple API that classifies text into one of the 20 newsgroups categories",
+    description="A simple web app that classifies news text 🚀",
     version="1.0.0"
 )
 
-@app.get("/")
-def home():
-    return {"message": "20 Newsgroups Classifier API is running 🚀"}
+# Templates & static
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
-@app.post("/predict")
-def predict_news(data: NewsInput):
-    prediction = model.predict([data.text])[0]
+
+@app.get("/", response_class=HTMLResponse)
+async def home(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request, "prediction": None})
+
+
+@app.post("/predict", response_class=HTMLResponse)
+async def predict(request: Request, text: str = Form(...)):
+    prediction = model.predict([text])[0]
     category = categories[prediction]
-    return {
-        "prediction": int(prediction),
-    
-        "category": category
-    }
-
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "prediction": category,
+            "text": text
+        }
+    )
 
 if __name__ == "__main__":
     import uvicorn

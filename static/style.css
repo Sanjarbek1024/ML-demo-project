@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #e8f5e9; /* pastel green background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.15); /* soft green shadow */
+    width: 500px;
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #a5d6a7; /* light green border */
+    margin-bottom: 15px;
+    font-size: 14px;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #66bb6a; /* brighter green on focus */
+    box-shadow: 0 0 5px rgba(102, 187, 106, 0.5);
+}
+
+button {
+    background: #4caf50; /* green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #388e3c; /* darker green */
+}
+
+.result {
+    margin-top: 20px;
+    background: #c8e6c9; /* light green highlight */
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #1b5e20; /* dark green text */
+}
