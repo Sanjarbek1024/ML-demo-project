@@ -13,7 +13,7 @@ categories = fetch_20newsgroups(subset="train").target_names
 # FastAPI app
 app = FastAPI(
     title="20 Newsgroups Classifier API",
-    description="A simple web app that classifies news text 🚀",
+    description="A simple web app that classifies news text",
     version="1.0.0"
 )
 
