@@ -1,21 +1,9 @@
-SOME EXAMPLES TO CHECK
+After the state passed a new background-check bill, several gun shows tightened their private-sale rules. Most of the debate centers on magazine capacity limits and concealed-carry permits. Anyone know how this compares to the federal Brady law?
 
-The government recently imposed new taxes on imported cars.
+My ’95 Honda Civic is idling rough after a cold start and the check-engine light throws a P0301 misfire. I changed the plugs and wires; could a clogged injector or vacuum leak cause this? Any recommendations for a decent OBD-II scanner?
 
-There is a growing demand for renewable energy in many countries.
+The Flyers’ power play looked awful last night; they couldn’t set up at all. The goalie stood on his head during a 5-on-3 and the defense still left the slot wide open. Do you bench the second line or juggle the PK units?
 
-Some companies face legal challenges when expanding internationally.
+The shuttle launch was scrubbed due to high winds in the launch window. NASA says the Mars probe’s aerobraking schedule is unchanged, but telemetry from the last orbit looked noisy. Any updates on the upcoming Hubble servicing EVA?
 
-Technological innovations are changing the way people communicate.
-
-Economic sanctions have affected the global oil market.
-
-Environmental policies are becoming stricter every year.
-
-Healthcare systems are under pressure due to rising costs.
-
-Cultural differences often create barriers in international business.
-
-Many young people prefer remote jobs instead of traditional offices.
-
-Climate change is a major concern for agricultural production.
+I’m trying to ray trace a scene with reflective spheres and the edges still alias badly. Does turning off dithering in the GIF output help, or should I export to JPEG at higher quality? Any PostScript tools for converting the render for print?
